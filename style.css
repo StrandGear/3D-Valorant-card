@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw+1vh);
+
+    --redVal: #ff4655;
+    --whiteVal: #ece8e1;
+    --darkVal: #0f1923;
+    --darkBlueVal: #0f1823;
+}
+
+body {
+    background-color: #0B192A;
+    overflow: hidden;
+}
+
+.base {
+    background-size: 100% 100%;
+    filter: blur(20px);
+    opacity: 0.7;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-repeat: no-repeat;
+    z-index: -10;
+}
+
+.layers {
+    position: fixed;
+    transform-style: preserve-3d;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -60%, 0) rotate3D(0, 0, 0, 5deg) scale(0.8);
+    transition: all 0.1s;
+    will-change: transform;
+    height: 550px;
+    width: 350px;
+}
+
+.layers * {
+    transform-style: preserve-3d;
+    image-rendering: optimizeSpeed;
+    will-change: transform;
+}
+
+.layer{
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    height: 100%;
+}
+
+.back-layers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.fade {
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0.00,  rgba(0,0,0,1)),
+    color-stop(0.35,  rgba(0,0,0,1)),
+    color-stop(0.65,  rgba(0,0,0,0.75)),
+    color-stop(0.75,  rgba(0,0,0,0.45)),
+    color-stop(0.85, rgba(0,0,0,0.25)),
+    color-stop(1.00,  rgba(39, 5, 5, 0)));
+}
+
+.front-layers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.front-layers * {
+    transform: translate3d(0, 0, 90px);
+}
+
+.bg {
+    background-size: auto 100%;
+    background-position: 30% 20%;
+    width: 88%;
+    margin-left: 5.7%;
+    top: -1.0019%;
+    transform: translate3d(0, 0, 40px);
+}
+
+.text {
+    transform: translate3d(0, 0, 80px);
+}
+
+.jett {
+    
+    transform: translate3d(0, 0, 90px) scale(0.97);
+
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0.00,  rgba(0,0,0,1)),
+    color-stop(0.35,  rgba(0,0,0,1)),
+    color-stop(0.65,  rgba(0,0,0,0.85)),
+    color-stop(0.77,  rgba(0,0,0,0.65)),
+    color-stop(0.85, rgba(0,0,0,0.15)),
+    color-stop(1.00,  rgba(39, 5, 5, 0)));
+}
+
+.border {
+    background-size: 100% 100%;
+    transform: translate3d(0, 0, 97px) scale(1.08);
+
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom,
+    color-stop(0.00,  rgba(0,0,0,1)),
+    color-stop(0.35,  rgba(0,0,0,1)),
+    color-stop(0.65,  rgba(0,0,0,0.85)),
+    color-stop(0.77,  rgba(0,0,0,0.75)),
+    color-stop(0.85, rgba(0,0,0,0.45)),
+    color-stop(1.00,  rgba(39, 5, 5, 0)));
+}
+
+.whiteBorder {
+    background-size: 100% 100%;
+    transform: translate3d(0, 0, 97px) scale(1.4);
+    height: 95%;
+    margin-top: 16%;
+}
+
+.whiteBar {
+}
+
+.rank{
+    background-size: cover;
+    transform: translate3d(0%, 55%, 98px) scale(0.15);
+}
+
+.tag{
+}
+
+.nickname {
+}
+
+.readyText {
+}
+
+.speaker {
+    background-size: 100% auto;
+    transform: translate3d(-2px, 68%, 98px) scale(0.1);
+}
+
+/*
+
+
+.base {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    min-width: 270px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: -10;
+}
+
+.layers {
+    position: absolute;
+    min-height: 580px;
+    min-width: 270px;
+    top: 20vh;
+    left: 41vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
+
+.layer {
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.back-layers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.front-layers {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
